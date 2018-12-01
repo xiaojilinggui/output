@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>output3</title>
+	<script type="text/javascript">
+		const Series = [{
+      name: 'Web',
+     courses: [{
+       name: 'HTML',
+    lessons: [{
+      name: 'HTML Lesson 1'
+    },{
+      name: 'HTML Lesson 2'
+    },{
+      name: 'HTML Lesson 3'
+    }]
+  },{
+    name: 'CSS',
+    lessons: [{
+      name: 'CSS Lesson 1'
+    },{
+      name: 'CSS Lesson 2'
+    },{
+      name: 'CSS Lesson 3'
+    },{
+      name: 'CSS Lesson 4'
+    }]
+  },{
+    name: 'JavaScript',
+    lessons: [{
+      name: 'JavaScript Lesson 1'
+    },{
+      name: 'JavaScript Lesson 2'
+    }]
+  }]
+},{
+  name: 'PHP',
+  courses: [{
+    name: 'Linux',
+    lessons: [{
+      name: 'Linux Lesson 1'
+    },{
+      name: 'Linux Lesson 2'
+    }]
+  },{
+    name: 'MySQL',
+    lessons: [{
+      name: 'MySQL Lesson 1'
+    },{
+      name: 'MySQL Lesson 2'
+    },{
+      name: 'MySQL Lesson 3'
+    },{
+      name: 'MySQL Lesson 4'
+    }]
+  },{
+    name: 'Nginx',
+    lessons: [{
+      name: 'Nginx Lesson 1'
+    },{
+      name: 'Nginx Lesson 2'
+    },{
+      name: 'Nginx Lesson 3'
+    },{
+      name: 'Nginx Lesson 4'
+    }]
+  }]
+}]
+function output(arr) {
+  return arr.map(item => {
+    item.lessonCount = item.courses.reduce((total, cur) => {
+      total += cur.lessons.length
+      return total
+    }, 0)
+    delete item.courses
+    return item
+  })
+}
+console.log(Series)
+output(Series)
+// 结果
+// [{
+//  name: 'Web',
+//  count: 9
+// },{
+//  name: 'PHP',
+//  count: 10
+// }]
+	</script>
+</head>
+<body>
+
+</body>
+</html>

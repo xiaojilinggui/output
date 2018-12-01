@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>output2</title>
+	<script type="text/javascript">
+		const Stacks = [{
+     id: 1,
+     name: 'JavaScript',
+     level: 1,
+     active: true
+     },{
+     id: 2,
+     name: 'CSS',
+     level: 3,
+     active: false
+     },{
+     id: 3,
+     name: 'HTML',
+     level: 2,
+     active: true
+     },{
+     id: 1,
+     name: 'JavaScript',
+     level: 4,
+     active: true
+     },{
+     id: 4,
+     name: 'JQuery',
+     level: 1,
+     active: false
+}]
+
+
+let arr = [];
+Stacks.forEach((iten) => {
+  let pan = [];console.log(pan)
+  Stacks.forEach((im) => {
+    if (iten.id == im.id) {
+        if (iten.level < im.level) {
+          pan.push(false)
+        }else{
+          pan.push(true)
+        }
+      }else{
+        pan.push(true)
+      }   
+  })
+let hl = pan.every(item => item == true);
+  if (hl) {
+    arr.push(iten);
+  }
+})
+console.log(arr);
+let acitiveTure = [];
+let acitivefalse = [];
+arr.forEach(item => {
+  if (item.active == true) {
+    acitiveTure.push(item)
+  }else{
+    acitivefalse.push(item)
+  }
+})
+console.log(acitiveTure, acitivefalse)
+// 需要实现的代码
+  // 1. 如果 id 重复，去除 level 值小的一项
+  // 2. 属性 acitive 为 true 的项目排行靠前
+  // 3. 属性 acitive 相同时，level 高的靠前
+  // 4. 返回项目格式为 名称-等级 的字符串
+  // return ...
+// function output2(Arr){
+// var obj={};
+// Arr.forEach(data=>{
+//   if (!obj[data.id] || obj[data.id].level < data.level) obj[data.id] = data;
+// });
+// console.log(Object.values(obj));
+// }
+
+// output2(Stacks);
+// 结果返回
+// ['JavaScript-4','HTML-2','CSS-3','JQuery-1'];
+
+// 提示：
+// 1. 数组去重，返回一个新的数组
+// 2. 数组筛选，筛选出 active 为 true 和 false 的两个数组
+// 3. 数组排序，两个筛选出的数组按照 level 的大小进行排序
+// 4. 数组重组，组合出新的数组格式
+	</script>
+</head>
+<body>
+
+</body>
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>output</title>
+	<script type="text/javascript">
+		const myStacks = [{
+    id: 1,
+    name: 'JavaScript',
+    level: 2,
+    },{
+    id: 2,
+    name: 'CSS',
+    level: 1,
+    },{
+    id: 4,
+    name: 'JQuery',
+    level: 1,
+    }]
+
+    const jobStacks = [{
+     id: 1,
+     name: 'JavaScript',
+     level: 1,
+     },{
+     id: 2,
+     name: 'CSS',
+     level: 3,
+     },{
+     id: 3,
+     name: 'HTML',
+     level: 2,
+     }]
+ // 1. 比较 Arr1，Arr2 两个数组，返回一个新数组 resultArr
+  // 2. resultArr 中包含 Arr2 中的所有项目
+  // 3. 如果 resultArr 中的项目 id 在 Arr1 中存在
+  //    且其 level 大于 resultArr项目中的level
+  //    则其 active 熟悉值为 true，否则为 fal se
+function output(Arr1,Arr2){
+var resultArr = Arr2.map(data=>{
+	let id = data.id;
+	let name = data.name;
+	let level = data.level;
+	active = Arr1.some(item=>{
+		item.id == data.id && item.level > data.level
+	});
+  return {id,name,level,active};
+})
+console.log(resultArr)
+}	
+output(myStacks,jobStacks);
+	</script>
+</head>
+<body>
+
+</body>
+</html>
